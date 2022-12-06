@@ -20,13 +20,13 @@ class Migration(migrations.Migration):
             },
             bases=('mutant.fielddefinition',),
         ),
-        migrations.CreateModel(
-            name='NullBooleanFieldDefinition',
-            fields=[
-            ],
-            options={
-                'proxy': True,
-            },
-            bases=('mutant.fielddefinition',),
-        ),
+        # migrations.CreateModel(
+        #     name='NullBooleanFieldDefinition',
+        #     fields=[
+        #     ],
+        #     options={
+        #         'proxy': True,
+        #     },
+        #     bases=('mutant.fielddefinition',),
+        # ),
     ]

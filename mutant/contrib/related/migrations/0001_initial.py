@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
                     primary_key=True, serialize=False
                 )),
                 ('related_name', mutant.db.fields.python.PythonIdentifierField(help_text='The name to use for the relation from the related object back to this one.', max_length=255, null=True, verbose_name='related name', blank=True)),
-                ('symmetrical', models.NullBooleanField(verbose_name='symmetrical')),
+                ('symmetrical', models.BooleanField(verbose_name='symmetrical')),
                 ('db_table', models.SlugField(help_text='The name of the table to create for storing the many-to-many data', max_length=30, null=True, blank=True)),
                 ('through', models.ForeignKey(
                     to='contenttypes.ContentType', on_delete=models.CASCADE, related_name='+', blank=True, help_text='Intermediary model', null=True)),

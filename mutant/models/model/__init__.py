@@ -10,9 +10,9 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.migrations.state import ModelState
 from django.db.models.constants import LOOKUP_SEP
-from django.db.models.fields import FieldDoesNotExist
-from django.utils.encoding import python_2_unicode_compatible
-from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import FieldDoesNotExist
+from six import python_2_unicode_compatible
+from django.utils.translation import gettext_lazy as _
 from picklefield.fields import PickledObjectField
 
 from ... import logger
