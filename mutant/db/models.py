@@ -41,7 +41,7 @@ class MutableModel(models.Model):
     @classmethod
     def get_related_model_states(cls, model_state):
         model_states = {}
-        for _name, field in model_state.fields:
+        for _, field in model_state.fields.items():
             related_model_reference = get_remote_field_model(field)
             if related_model_reference:
                 related_model = cls._meta.apps.get_model(related_model_reference)
@@ -77,7 +77,7 @@ class MutableModel(models.Model):
         )
         if origin is None:
             origin = cls._definition
-        for definition_cls, definition_pk in cls._dependencies:
+        for definition_cls, definition_pk in cls._dependencies.items():
             if (definition_cls, definition_pk) == origin:
                 continue
             try:
