@@ -77,7 +77,7 @@ class MutableModel(models.Model):
         )
         if origin is None:
             origin = cls._definition
-        for definition_cls, definition_pk in cls._dependencies.items():
+        for definition_cls, definition_pk in cls._dependencies:
             if (definition_cls, definition_pk) == origin:
                 continue
             try:
